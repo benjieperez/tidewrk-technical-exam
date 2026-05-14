@@ -8,7 +8,7 @@
 
 ## Setup Instructions
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/benjieperez/tidewrk-technical-exam.git
 cd healthcare-pipeline
 cp .env.example .env
 make start
