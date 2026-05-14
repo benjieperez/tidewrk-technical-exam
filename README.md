@@ -9,7 +9,7 @@
 ## Setup Instructions
 ```bash
 git clone https://github.com/benjieperez/tidewrk-technical-exam.git
-cd healthcare-pipeline
+cd tidewrk-technical-exam
 cp .env.example .env
 make start
 ```
