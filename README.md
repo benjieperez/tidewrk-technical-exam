@@ -79,25 +79,6 @@ curl http://localhost:8000/patients/1
 ```
 ---
 
-## Celery Worker Validation
-
-### Flower UI
-Open http://localhost:5555 to see all task executions, states and worker health in real time.
-
-### CLI
-
-```bash
-# Check worker is running
-docker compose logs worker
-
-# Inspect active tasks
-docker compose exec worker celery -A worker.main inspect active
-
-# Inspect task results via Redis
-docker compose exec redis redis-cli keys "celery-task-meta-*"
-```
-
----
 
 ## S3 Verification
 
@@ -121,3 +102,9 @@ make check-patients
 # Query visits in PostgreSQL
 make check-visits
 ```
+
+## Celery Worker
+
+### Flower UI
+Open http://localhost:5555 to see all task executions, states and worker health in real time.
+
