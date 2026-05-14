@@ -25,7 +25,6 @@ class PatientIntakeWorkflow:
             backoff_coefficient=2.0,
         )
 
-        # Step 1: Fetch CSV from S3
         rows: list[dict] = await workflow.execute_activity(
             fetch_csv_from_s3,
             s3_key,
@@ -35,7 +34,6 @@ class PatientIntakeWorkflow:
 
         workflow.logger.info(f"Fetched {len(rows)} rows from S3")
 
-        # Step 2: Process all rows in a single DB transaction activity
         result: dict = await workflow.execute_activity(
             process_patient_rows,
             rows,
