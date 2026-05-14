@@ -110,18 +110,7 @@ services:
     depends_on:
       - redis
       - worker
-
-  awscli:
-    image: amazon/aws-cli
-    container_name: healthcare_awscli
-    environment:
-      AWS_ACCESS_KEY_ID: test
-      AWS_SECRET_ACCESS_KEY: test
-      AWS_DEFAULT_REGION: us-east-1
-    entrypoint: /bin/sh
-    tty: true
-    depends_on:
-      - localstack
+      
 volumes:
   postgres_data:
   localstack_data:
